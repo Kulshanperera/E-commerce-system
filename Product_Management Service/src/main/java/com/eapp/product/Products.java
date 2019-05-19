@@ -22,11 +22,19 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 		private int product_id;
 		private String name;
+		private int price;
 		private String description;
 		
 		
 		public int getProduct_id() {
 			return product_id;
+		}
+		public void setPrice(int price) {
+			this.price = price;
+		}
+
+		public int getPrice() {
+			return price;
 		}
 		public void setProduct_id(int product_id) {
 			this.product_id = product_id;

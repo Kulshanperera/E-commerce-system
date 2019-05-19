@@ -50,6 +50,7 @@ public class ProductController {
 		return ResponseEntity.notFound().build();
 	}
 	p.setName(pDetails.getName());
+	p.setPrice(pDetails.getPrice());
 	p.setDescription(pDetails.getDescription());
 	Products updaProduct=productDAO.save(p);
 	return ResponseEntity.ok().body(updaProduct);

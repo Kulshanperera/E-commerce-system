@@ -14,14 +14,14 @@ import com.eapp.product.repository.ProductRepository;
 @Service
 public class ProductDAO {
 	@Autowired ProductRepository productRepository;
-	/* SAVE AN EMPLOYEE */ 
+	/* SAVE A PRODUCTS */ 
 	@Transactional(readOnly = false,isolation = Isolation.READ_COMMITTED) 
 	public Products save(Products p) { return  productRepository .save(p);
 	}
-	/* SEARCH ALL EMPLOYEES */
+	/* SEARCH ALL PRODUCTS */
 	public List<Products> findAll(){ 
 		return productRepository.findAll();
-	} /* GET AN EMPLOYEE */
+	} /* GET A PRODUCTS */
 	public Products findOne(Long pId) {
 		Optional<Products> op = productRepository.findById(pId);
 		if(op.isPresent()){ 
@@ -31,7 +31,7 @@ public class ProductDAO {
 		return null; 
 		} 
 	}
-	/* DELETE AN EMPLOYEE by id */ 
+	/* DELETE A PRODUCTS by id */ 
 	@Transactional(readOnly = false,isolation = Isolation.READ_COMMITTED)
 	public void delete(Products p) {
 		productRepository.delete(p);
